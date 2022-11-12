@@ -15,8 +15,8 @@ class PhodPolicy {
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user) {
-        //
+    public function viewAny(?User $user) {
+        return true;
     }
 
     /**
@@ -26,8 +26,8 @@ class PhodPolicy {
      * @param  \App\Models\Phod  $phod
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Phod $phod) {
-        //
+    public function view(?User $user, Phod $phod) {
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class PhodPolicy {
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function create(User $user) {
-        //
+        return true;
     }
 
     /**

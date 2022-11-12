@@ -22,6 +22,20 @@ class Phod extends Model {
         'message',
     ];
 
+    //appends: アクセサの値を渡す値に含める
+    protected $appends = [
+        'user_name',
+        'image_url',
+    ];
+
+    //hidden: 渡す値に含めない
+    protected $hidden = [
+        // 'image',
+        'user_id',
+        'updated_at',
+        'user',
+    ];
+
 
 
     // 検索用のスコープ
@@ -43,6 +57,11 @@ class Phod extends Model {
         return $this->belongsTo(User::class);
     }
 
+    // (belongsTo)1件の写真は1つのタグに紐付いている
+    public function tag() {
+        return $this->belongsTo(Tag::class);
+    }
+
     public function getImageUrlAttribute() {
         return Storage::url($this->image_path);
     }
@@ -50,5 +69,10 @@ class Phod extends Model {
     // 画像のパスを読み出し
     public function getImagePathAttribute() {
         return 'images/phods/' . $this->image;
+    }
+
+    //appendsにユーザー名を渡す
+    public function getUserNameAttribute() {
+        return $this->user->name;
     }
 }

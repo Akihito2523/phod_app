@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Phod;
 
 class ContactController extends Controller {
 
-    public function index() {
+    public function index(Request $request, Phod $phod) {
         return view('phods.contact');
     }
+
+    // public function contact(Request $request, Phod $phod) {
+    //     return view('phods.contact');
+    // }
 
     public function store(Request $request) {
         // $contact = new Contact();

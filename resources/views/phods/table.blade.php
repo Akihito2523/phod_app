@@ -5,8 +5,7 @@
         {{-- 検索 --}}
         <form action="{{ route('table') }}" method="GET" class="form_position">
             @csrf
-            <input type="search" name="title" placeholder="タイトル">
-            <input type="search" name="score_id" .hover-link placeholder="写真評価">
+            <input type="search" name="title" placeholder="日付け" value="{{ old('title') }}">
             <input type="submit" value="検索" class="search">
         </form>
     </div>
@@ -36,14 +35,18 @@
                     </td> --}}
                     <td>2022/11/03</td>
 
-
+                    {{-- @can('update', $photo) --}}
                     <td><a href="{{ route('phods.edit', $phod) }}" class="btn width">編集</a></td>
+                    {{-- @endcan --}}
+
+                    {{-- @can('delete', $photo) --}}
                     <td>
                         <form action="{{ route('phods.destroy', $phod) }}" id="form_recipe" method="post">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="削除" id="btn" class="btn btn_red width">
                         </form>
+                        {{-- @endcan --}}
                     </td>
                 </tr>
             @endforeach

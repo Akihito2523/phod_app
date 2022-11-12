@@ -20,7 +20,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '1.jpg',
                     'body' => '春は、寒い冬から気温が上がり始め、朝晩はまだ肌寒さがあるけれど、日中が次第に暖かくなる時期。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -29,7 +28,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '2.jpg',
                     'body' => '夏は、四季のひとつで、春と秋にはさまれた季節。天文学的には夏至から秋分まで。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -38,7 +36,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '3.jpg',
                     'body' => '秋は、四季の1つであり夏の後、冬の前に位置する',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -47,7 +44,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '4.jpg',
                     'body' => '冬は、四季の一つであり、一年の中で最も寒い期間・季節を指す。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -56,7 +52,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '5.jpg',
                     'body' => '春は、寒い冬から気温が上がり始め、朝晩はまだ肌寒さがあるけれど、日中が次第に暖かくなる時期。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -65,7 +60,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '6.jpg',
                     'body' => '夏は、四季のひとつで、春と秋にはさまれた季節。天文学的には夏至から秋分まで。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -74,7 +68,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '7.jpg',
                     'body' => '秋は、四季の1つであり夏の後、冬の前に位置する',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -83,7 +76,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '8.jpg',
                     'body' => '冬は、四季の一つであり、一年の中で最も寒い期間・季節を指す。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -92,7 +84,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '9.jpg',
                     'body' => '秋は、四季の1つであり夏の後、冬の前に位置する',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -101,7 +92,6 @@ class PhodSeeder extends Seeder {
                     'place' => '大阪',
                     'image' => '10.jpg',
                     'body' => '冬は、四季の一つであり、一年の中で最も寒い期間・季節を指す。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -110,7 +100,6 @@ class PhodSeeder extends Seeder {
                     'place' => '京都',
                     'image' => '11.jpg',
                     'body' => '冬は、四季の一つであり、一年の中で最も寒い期間・季節を指す。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
                 [
@@ -119,7 +108,6 @@ class PhodSeeder extends Seeder {
                     'place' => '東京',
                     'image' => '12.jpg',
                     'body' => '冬は、四季の一つであり、一年の中で最も寒い期間・季節を指す。',
-                    'tag' => 'default',
                     'user_id' => 1
                 ],
             ]);

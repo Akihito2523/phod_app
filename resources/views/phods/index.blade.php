@@ -21,12 +21,9 @@
 
         <div class="gallery_list">
             <ul class="list_nav_sidebar">
-                <li><a href="">本</a></li>
-                <li><a href="">映画</a></li>
-                <li><a href="">アニメ</a></li>
-                <li><a href="">旅行</a></li>
-                <li><a href="">プログラミング</a></li>
-                <li><a href="">スクリーンショット</a></li>
+                @foreach ($tags as $tag)
+                    <li><a href="">{{ $tag->tag }}</a></li>
+                @endforeach
             </ul>
         </div>
 
@@ -36,7 +33,7 @@
                     <a href="{{ route('phods.show', $phod) }}">
                         <img src="{{ $phod->image_url }}" alt="">
                     </a>
-                    <h3 class="title">{{ $phod->tag }}</h3>
+                    <h3 class="title">{{ $phod->title }}</h3>
                     <div class="icons">
 
                         <div class="btn_flex">
@@ -56,5 +53,7 @@
         </div>
 
     </section>
+
+    <script src="{{ asset('/js/index.js') }}"></script>
 
 </x-app-layout>

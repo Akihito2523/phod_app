@@ -6,7 +6,7 @@
             <li> <a href="{{ route('root') }}">HOME</li>
             <li><a href="{{ route('table') }}">Table</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
-            <li><a href="{{ route('contact') }}">Tag</a></li>
+            <li><a href="{{ route('tags.index') }}">Tag</a></li>
 </a></li>
             {{-- <li><a href="/phods/contacct">Contact</a></li> --}}
         </ul>

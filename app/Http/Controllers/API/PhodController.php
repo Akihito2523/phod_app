@@ -1,16 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Models\Phod;
 use Illuminate\Http\Request;
+use App\Http\Requests\PhodRequest;
+use App\Http\Requests\StorePhodRequest;
+use App\Http\Requests\UpdatePhodRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Contact;
-use App\Models\Tag;
+use App\Models\Tag;;
 
 class PhodController extends Controller {
+
+    public function __construct() {
+        return $this->authorizeResource(Phod::class, 'phod');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,16 +36,8 @@ class PhodController extends Controller {
 
         // appends配列を追加し、ページネーションでも検索可能
         $phods->appends(compact('title'));
-        return view('phods.index', compact('phods', 'tags'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        //
+        // return view('phods.index', compact('phods', 'tags'));
+        return response()->json($phods);
     }
 
     /**
@@ -47,12 +47,38 @@ class PhodController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //contactsのデータベースに保存
-        // $contact = new Contact($request->all());
-        // $contact->save();
+        $phod = new Phod($request->all());
+        $phod->user_id = $request->user()->id;
+
+        $file = $request->file('image');
+        $phod->image = self::createFilename($file);
+
+        // トランザクション開始
+        DB::beginTransaction();
+        try {
+            // 登録
+            $phod->save();
+
+            // 画像アップロード
+            if (!Storage::putFileAs('images/phods', $file, $phod->image)) {
+                // 例外を投げてロールバックさせる
+                throw new \Exception('画像ファイルの保存に失敗しました。');
+            }
+
+            // トランザクション終了(成功)
+            DB::commit();
+        } catch (\Exception $e) {
+            // トランザクション終了(失敗)
+            DB::rollback();
+            // return back()->withInput()->withErrors($e->getMessage());
+            logger($e->getMessage());
+            return response(status: 500);
+        }
+
         // return redirect()
-        //     ->route('phods.index')
-        //     ->with('notice', 'お問い合わせが完了しました。');
+        //     ->route('posts.show', $phod)
+        // ->with('notice', '写真を登録しました');
+        return response()->json($phod, 201);
     }
 
     /**
@@ -63,18 +89,8 @@ class PhodController extends Controller {
      */
     public function show(Phod $phod) {
         // $phods = Phod::all();
-        return view('phods.show', compact('phod'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Phod  $phod
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Phod $phod) {
-        // $phods = Phod::all();
-        return view('phods.edit', compact('phod'));
+        // return view('phods.show', compact('phod'));
+        return response()->json($phod);
     }
 
     /**
@@ -84,23 +100,23 @@ class PhodController extends Controller {
      * @param  \App\Models\Phod  $phod
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Phod $phod) {
+    public function update(UpdatePhodRequest $request, Phod $phod) {
         $phod->fill($request->all());
 
         // (cannot)更新権限を確認するメソッド
-        if ($request->user()->cannot('update', $phod)) {
-            return redirect()
-                ->route('phods.show', $phod)
-                ->withErrors('自分の写真以外は更新できません');
-        }
+        // if ($request->user()->cannot('update', $phod)) {
+        //     return redirect()
+        //         ->route('phods.show', $phod)
+        //         ->withErrors('自分の写真以外は更新できません');
+        // }
 
         $file = $request->file('image');
         if ($file) {
             // 更新前の画像ファイルのファイル名を保持
             $delete_file_path = $phod->image_path;
-            $phod->image = self::createFileName($file);
-        }
 
+        }
+        logger($request->file('image'));
         // トランザクション開始
         // beginTransactionからDB::commit
         DB::beginTransaction();
@@ -126,12 +142,15 @@ class PhodController extends Controller {
         } catch (\Exception $e) {
             // トランザクション終了(失敗)
             DB::rollback();
-            return back()->withInput()->withErrors($e->getMessage());
+            // return back()->withInput()->withErrors($e->getMessage());
+            logger($e->getMessage());
+            return response(status: 500);
         }
 
-        return redirect()
-            ->route('phods.show', $phod)
-            ->with('notice', '写真を更新しました');
+        // return redirect()
+        //     ->route('phods.show', $phod)
+        //     ->with('notice', '写真を更新しました');
+        return response()->json($phod, 200);
     }
 
     /**
@@ -154,12 +173,15 @@ class PhodController extends Controller {
             DB::commit();
         } catch (\Exception $e) {
             // トランザクション終了(失敗)
-            DB::rollback();
-            return back()->withInput()->withErrors($e->getMessage());
+            // DB::rollback();
+            // return back()->withInput()->withErrors($e->getMessage());
+            logger($e->getMessage());
+            return response(status: 500);
         }
 
-        return redirect()->route('phods.index')
-            ->with('notice', '写真を削除しました');
+        // return redirect()->route('phods.index')
+        //     ->with('notice', '写真を削除しました');
+        return response()->json($phod, 204);
     }
 
     // テーブルメソッド
@@ -171,36 +193,7 @@ class PhodController extends Controller {
         $phods = Phod::search($params)->latest()->paginate(12);
         // $photos->appends(compact('title', 'score_id'));
         return view('phods.table', compact('phods'));
-
-        // Photoモデル全件検索する箱
-        // $query = Photo::query();
-
-        // if (!empty($title)) {
-        //     $photos = Photo::where('title', 'like', '%' . $title . '%')
-        //         ->paginate(10);
-        //     // $photos->appends(compact('title'));
-        // }
-
-        // if (!empty($score_id)) {
-        //     $query->where('score_id', 'like', '%' . $score_id . '%');
-        //     $photos  = $query->paginate(10);
-        // }
     }
-
-    //お問い合わせ
-    public function contact(Request $request, Phod $phod) {
-        return view('phods.contact');
-    }
-
-    // public function contact_store(Request $request) {
-    //       //contactsのデータベースに保存
-    //     $contact = new Contact($request->all());
-    //     $contact->save();
-    //     return redirect()
-    //         ->route('phods.index')
-    //         ->with('notice', 'お問い合わせが完了しました。');
-    // }
-
 
     // (getClientOriginalName)画像ファイル名を取得
     private static function createFileName($file) {
