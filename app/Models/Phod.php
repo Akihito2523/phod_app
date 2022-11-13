@@ -37,7 +37,6 @@ class Phod extends Model {
     ];
 
 
-
     // 検索用のスコープ
     // $paramsはrequestのパラメータを受け取る
     public function scopeSearch(Builder $query, $params) {
