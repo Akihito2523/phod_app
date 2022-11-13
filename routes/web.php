@@ -45,6 +45,10 @@ Route::resource('phods', PhodController::class)
     ->only(['store', 'create', 'update', 'destroy', 'edit', 'index', 'show'])
     ->middleware('auth');
 
+    //認証していなくてもアクセスできる
+// Route::resource('phods', PhodController::class)
+//     ->only(['show', 'index']);
+
 
 Route::resource('tags', TagController::class)
     ->only(['store', 'create', 'update', 'destroy', 'edit', 'index', 'show'])
