@@ -32,7 +32,7 @@ class PhodController extends Controller {
 
         // query()はURLの？以降のパラメータ
         $params = $request->query();
-        $phods = Phod::search($params)->latest()->paginate(12);
+        $phods = Phod::search($params)->latest()->paginate(6);
 
         // appends配列を追加し、ページネーションでも検索可能
         $phods->appends(compact('title'));

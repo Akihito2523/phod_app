@@ -50,3 +50,10 @@ Content-Disposition: form-data; name="image"; filename="file.jpg"
 
 < {{ file }}
 ------storeForm--
+
+### destroy
+# @prompt post_id
+DELETE /api/phods/{{ post_id }} HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}

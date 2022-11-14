@@ -26,17 +26,15 @@ class PhodReques extends FormRequest
         $rule = [
             'title' => 'required|string|max:50',
             // 'email' => 'required|email:strict,dns|max:255',
-            'email' => 'required',
             'body' => 'required|string|max:2000',
-            'score_id' => 'required',
         ];
 
         // getNameはroute:listのNameを取得
         $route = $this->route()->getName();
         // storeとupdateアクションがrouteと一致しているかを判定
             // 登録時か更新時で且つ画像が指定された時だけ、imageを設定
-        if ($route === 'photos.store' ||
-            ($route === 'photos.update' && $this->file('image'))
+        if ($route === 'phods.store' ||
+            ($route === 'phods.update' && $this->file('image'))
         ) {
             // ファイルの拡張子がjpgかpngに該当するか確認
             $rule['image'] = 'required|file|image|mimes:jpg,png';
