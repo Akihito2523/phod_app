@@ -19,7 +19,7 @@ class PhodController extends Controller {
     public function index(Request $request, Tag $tag) {
         $phods = Phod::all();
         $tags = Tag::all();
-        dd($phods);
+        // dd($phods);
         // 検索機能
         $title = $request->title;
 
