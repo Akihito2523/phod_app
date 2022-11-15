@@ -20,7 +20,7 @@
                 <p>撮影者:{{ $phod->user->name }}</p>
                 <p>{{ $phod->body }}</p>
                 <p>撮影場所:{{ $phod->place }}</p>
-                <p>撮影日:{{ date('Yd H:i:s', strtotime('-1 day')) < $phod->created_at ?: '' }}{{ $phod->created_at }}
+                <p>撮影日:<td>{{ \Carbon\Carbon::parse($phod->created_at)->format('Y:m:d') }}</td>
                 </p>
                 <div class="icons">
                     <a href="#" class="fab fa-facebook"></a>

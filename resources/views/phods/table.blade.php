@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <div class="form_header">
-        <h2 class="headline">テーブル一覧</h2>
+        <h2 class="headline">リスト一覧</h2>
         {{-- 検索 --}}
         <form action="{{ route('table') }}" method="GET" class="form_position">
             @csrf
@@ -31,9 +31,7 @@
                     <td>{{ $phod->user->name }}</td>
                     <td>{{ $phod->title }}</td>
                     <td><img src="{{ $phod->image_url }}" class="table_img">{{ $phod->image }}</td>
-                    {{-- <td>{{ date('Yd H:i:s', strtotime('-1 day')) $phod->created_at ?: '' }}{{ $phod->created_at }}
-                    </td> --}}
-                    <td>2022/11/03</td>
+                    <td>{{ \Carbon\Carbon::parse($phod->created_at)->format('Y:m:d') }}</td>
 
                     {{-- @can('update', $photo) --}}
                     <td><a href="{{ route('phods.edit', $phod) }}" class="btn width">編集</a></td>

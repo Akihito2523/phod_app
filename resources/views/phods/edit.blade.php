@@ -24,9 +24,9 @@
             </div>
 
             <div>
-                <label for="date">日時</label>
-                <input type="date" id="date" name="date" autofocus required
-                    value="{{ old('date', $phod->date) }}">
+                <label for="created_at">日時</label>
+                <input type="date" id="created_at" name="created_at" autofocus required
+                    value="{{ old('created_at', $phod->created_at) }}">
             </div>
 
             <div>

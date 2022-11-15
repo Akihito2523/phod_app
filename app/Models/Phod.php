@@ -16,6 +16,7 @@ class Phod extends Model {
         'place',
         'body',
         'tag',
+        'created_at',
 
         'name',
         'email',
@@ -26,6 +27,7 @@ class Phod extends Model {
     protected $appends = [
         'user_name',
         'image_url',
+        'tags_tag',
     ];
 
     //hidden: 渡す値に含めない
@@ -73,5 +75,9 @@ class Phod extends Model {
     //appendsにユーザー名を渡す
     public function getUserNameAttribute() {
         return $this->user->name;
+    }
+
+    public function getTagsTagAttribute() {
+        return $this->tag->tag;
     }
 }

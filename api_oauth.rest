@@ -21,13 +21,18 @@ Accept: application/json
 Authorization: Bearer {{ token }}
 
 
-### phods
+### index
 GET /api/phods HTTP/1.1
 Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}
 
-
+### show
+# @prompt phods_id
+GET /api/phods/{{ phods_id }}?perPage=20&page=1 HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}
 
 
 ### store
@@ -54,8 +59,8 @@ Content-Disposition: form-data; name="image"; filename="file.jpg"
 ------storeForm--
 
 ### destroy
-# @prompt post_id
-DELETE /api/phods/{{ post_id }} HTTP/1.1
+# @prompt phods_id
+DELETE /api/phods/{{ phods_id }} HTTP/1.1
 Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}
