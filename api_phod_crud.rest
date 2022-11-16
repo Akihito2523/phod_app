@@ -1,4 +1,4 @@
-@host = localhost
+# @host = localhost
 
 ### index
 GET /api/phods HTTP/1.1

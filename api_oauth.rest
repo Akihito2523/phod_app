@@ -34,7 +34,6 @@ Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}
 
-
 ### store
 # @prompt file
 POST /api/phods HTTP/1.1
