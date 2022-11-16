@@ -26,7 +26,7 @@ class Phod extends Model {
     protected $appends = [
         'user_name',
         'image_url',
-        'tags_tag',
+        'tag_type',
     ];
 
     //hidden: 渡す値に含めない
@@ -78,7 +78,7 @@ class Phod extends Model {
         return $this->user->name;
     }
 
-    public function getTagsTagAttribute() {
-        return $this->tag->tag;
+    public function getTagTypeAttribute() {
+        return $this->tag->type;
     }
 }
