@@ -53,3 +53,4 @@
     <script src="{{ asset('/js/index.js') }}"></script>
 
 </x-app-layout>
+<p>
