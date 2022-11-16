@@ -61,7 +61,7 @@ class Phod extends Model {
     public function tag() {
         return $this->belongsTo(Tag::class);
     }
-
+//s
 
 
     public function getImageUrlAttribute() {
