@@ -28,6 +28,7 @@ class PhodController extends Controller {
         $phods = Phod::all();
         $tags = Tag::all();
         // 検索機能
+
         $title = $request->title;
 
         // query()はURLの？以降のパラメータ
@@ -49,6 +50,7 @@ class PhodController extends Controller {
     public function store(Request $request) {
         $phod = new Phod($request->all());
         $phod->user_id = $request->user()->id;
+        $phod->place = $request->place;
 
         $file = $request->file('image');
         $phod->image = self::createFilename($file);

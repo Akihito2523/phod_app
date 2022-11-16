@@ -30,6 +30,10 @@ Content-Disposition: form-data; name="title"
 
 store タイトル
 ------storeForm
+Content-Disposition: form-data; name="place"
+
+store 場所
+------storeForm
 Content-Disposition: form-data; name="body"
 
 store 本文

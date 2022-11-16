@@ -12,9 +12,15 @@ Client secret: LV4i8lUKE97uLs3zAv418j8lGNroIfzxcnvtz3aB
 # 認証後の遷移先 http://localhost 
 
 # sail artisan passport:client
+
+(1回目)
 クライアント登録(idとsecretを発行)
 Client ID: 3
 Client secret: zwrwI123v3A4so0k5jiOFdqFXpwiGxYAEnFAtEWG
+
+(2回目)
+Client ID: 1
+Client secret: rI6iS4dSjzaF6io589jmSMMWdbisYRY16sWioIyi
 
 
 # ブラウザでcodeを取得
@@ -57,3 +63,6 @@ https://api-phod-laravel.herokuapp.com/oauth/authorize?redirect_uri=http://local
 
 
 def5020056260f5f48cbfa78edd2dd5cd64b30e55213c7a06841197f8896bafc0f9ba84f4f021f46a3d75f0893be9140c4e778ed1b54ca723d32c9ef80fae28e3f8eb7763db84f1ba7a8fe656694ad08193183fbaaadaa77e264f03c7a5b55967eb4f0b08c12000ee7452d0e41bc1d292464eed61b9989dec11e59154d1b1c84380ca94258b915aa79cbc4daf50258d29f02d441ace5fdb539e4cda38767c2115e0f785b57d13a92eace4052d6544df9317343cc488f16a75e09a8e4c505e7d157d8871d9c24eec4167c4f8f21dc6ad4a6b131ab6516184a8d6941e5a810fb878f1773df35bb559d0ac41c6e67d9a6e3d45c5a520fb251d9a4f0f13ae5e451cee47cc28f1a0e0bcd21431107d57b7001dce5d800153bd3aa5db71e03f5002c842a9f2307df1a64a81641968fdd40aa5339d3c3d7bcbf98efb242aae0893ce87e993b8f1402b0719a745c584f067baf
+
+https://api-phod-laravel.herokuapp.com/
+api-phod-laravel
