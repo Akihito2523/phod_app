@@ -14,7 +14,7 @@ class CreateTagsTable extends Migration {
         if (!Schema::hasTable('tags')) {
             Schema::create('tags', function (Blueprint $table) {
                 $table->id();
-                $table->string('type')->default('default');
+                $table->string('type');
                 $table->timestamps();
             });
         }

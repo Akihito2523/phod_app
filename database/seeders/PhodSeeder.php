@@ -41,6 +41,33 @@ class PhodSeeder extends Seeder {
                     'user_id' => 1,
                     'tag_id' => 1
                 ],
+                [
+                    'id' => '4',
+                    'title' => '秋',
+                    'place' => '大阪',
+                    'image' => '4.jpg',
+                    'body' => '秋は、四季の1つであり夏の後、冬の前に位置する',
+                    'user_id' => 1,
+                    'tag_id' => 1
+                ],
+                [
+                    'id' => '5',
+                    'title' => '秋',
+                    'place' => '大阪',
+                    'image' => '5.jpg',
+                    'body' => '秋は、四季の1つであり夏の後、冬の前に位置する',
+                    'user_id' => 1,
+                    'tag_id' => 1
+                ],
+                [
+                    'id' => '6',
+                    'title' => '秋',
+                    'place' => '大阪',
+                    'image' => '6.jpg',
+                    'body' => '秋は、四季の1つであり夏の後、冬の前に位置する',
+                    'user_id' => 1,
+                    'tag_id' => 1
+                ],
             ]);
         }
     }

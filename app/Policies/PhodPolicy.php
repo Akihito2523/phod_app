@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Phod;
 use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PhodPolicy {

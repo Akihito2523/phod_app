@@ -54,6 +54,7 @@ store 場所
 ------storeForm
 Content-Disposition: form-data; name="body"
 
+
 store 本文
 ------storeForm
 Content-Disposition: form-data; name="image"; filename="file.jpg"

@@ -25,6 +25,7 @@ class PhodReques extends FormRequest
     {
         $rule = [
             'title' => 'required|string|max:50',
+            'place' => 'required|string|max:50',
             // 'email' => 'required|email:strict,dns|max:255',
             'body' => 'required|string|max:2000',
         ];

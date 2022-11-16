@@ -50,7 +50,7 @@ class PhodController extends Controller {
     public function store(Request $request) {
         $phod = new Phod($request->all());
         $phod->user_id = $request->user()->id;
-        $phod->tag_id = $request->tag()->id;
+        $phod->user_id = $request->tag()->id;
 
         $file = $request->file('image');
         $phod->image = self::createFilename($file);
