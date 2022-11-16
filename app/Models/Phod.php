@@ -35,6 +35,7 @@ class Phod extends Model {
         'user_id',
         'updated_at',
         'user',
+        'tag'
     ];
 
 
