@@ -9,7 +9,7 @@ class Tag extends Model
 {
     use HasFactory;
 
-    // (hasMany)1枚の写真には複数のタグに紐付いている
+   // (hasMany)1枚の写真には複数のタグに紐付いている
     public function phods() {
         return $this->hasMany(Phod::class);
     }

@@ -15,7 +15,6 @@ class Phod extends Model {
         'title',
         'place',
         'body',
-        'tag',
         'created_at',
 
         'name',
@@ -53,15 +52,17 @@ class Phod extends Model {
         return $query;
     }
 
-    // (belongsTo)1件の写真は1人のユーザーに紐付いている
+    // (belongsTo)1枚の写真は1人のユーザーに紐付いている
     public function user() {
         return $this->belongsTo(User::class);
     }
 
-    // (belongsTo)1件の写真は1つのタグに紐付いている
+    // (belongsTo)1枚の写真は1つのタグに紐付いている
     public function tag() {
         return $this->belongsTo(Tag::class);
     }
+
+
 
     public function getImageUrlAttribute() {
         return Storage::url($this->image_path);

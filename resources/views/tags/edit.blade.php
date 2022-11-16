@@ -12,9 +12,9 @@
             @method('PUT')
 
             <div>
-                <label for="tag">タグ</label>
-                <input type="text" id="tag" name="tag" autofocus required
-                    value="{{ old('tag', $tag->tag) }}">
+                <label for="type">タグ</label>
+                <input type="text" id="type" name="type" autofocus required
+                    value="{{ old('type', $tag->type) }}">
             </div>
 
             <input type="submit" class="submit" value="更新">

@@ -15,10 +15,14 @@ class CreatePhodsTable extends Migration {
             Schema::create('phods', function (Blueprint $table) {
                 $table->id();
                 $table->string('title');
-                $table->string('place')->nullable();
+                $table->string('place');
                 $table->string('image');
                 $table->text('body');
                 $table->foreignId('user_id')
+                    ->constrained()
+                    ->cascadeOnUpdate()
+                    ->cascadeOnDelete();
+                $table->foreignId('tag_id')
                     ->constrained()
                     ->cascadeOnUpdate()
                     ->cascadeOnDelete();

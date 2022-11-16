@@ -8,8 +8,8 @@ Authorization: Bearer {{ token }}
 
 
 ### show
-# @prompt post_id
-GET /api/phods/{{ post_id }}?perPage=20&page=1 HTTP/1.1
+# @prompt phod_id
+GET /api/phods/{{ phod_id }}?perPage=20&page=1 HTTP/1.1
 Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}
@@ -71,8 +71,8 @@ Content-Disposition: form-data; name="image"; filename="file.jpg"
 
 
 ### destroy
-# @prompt post_id
-DELETE /api/phods/{{ post_id }} HTTP/1.1
+# @prompt phod_id
+DELETE /api/phods/{{ phod_id }} HTTP/1.1
 Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}

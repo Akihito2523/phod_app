@@ -14,11 +14,7 @@ class CreateTagsTable extends Migration {
         if (!Schema::hasTable('tags')) {
             Schema::create('tags', function (Blueprint $table) {
                 $table->id();
-                $table->text('tag')->default('default');
-                $table->foreignId('phod_id')->nullable()
-                    ->constrained()
-                    ->cascadeOnUpdate()
-                    ->cascadeOnDelete();
+                $table->string('type')->default('default');
                 $table->timestamps();
             });
         }

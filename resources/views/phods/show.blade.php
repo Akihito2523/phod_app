@@ -22,6 +22,7 @@
                 <p>撮影場所:{{ $phod->place }}</p>
                 <p>撮影日:<td>{{ \Carbon\Carbon::parse($phod->created_at)->format('Y:m:d') }}</td>
                 </p>
+                <p>{{ $phod->tag->type }}</p>
                 <div class="icons">
                     <a href="#" class="fab fa-facebook"></a>
                     <a href="#" class="fab fa-twitter"></a>

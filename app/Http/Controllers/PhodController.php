@@ -16,7 +16,7 @@ class PhodController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Tag $tag) {
+    public function index(Request $request, Phod $phod, Tag $tag) {
         $phods = Phod::all();
         $tags = Tag::all();
         // dd($phods);
@@ -30,6 +30,7 @@ class PhodController extends Controller {
         // appends配列を追加し、ページネーションでも検索可能
         $phods->appends(compact('title'));
         return view('phods.index', compact('phods', 'tags'));
+        return response()->json($phods);
     }
 
     /**
@@ -47,13 +48,13 @@ class PhodController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request, Contact $contact) {
         //contactsのデータベースに保存
-        // $contact = new Contact($request->all());
-        // $contact->save();
-        // return redirect()
-        //     ->route('phods.index')
-        //     ->with('notice', 'お問い合わせが完了しました。');
+        $contact = new Contact($request->all());
+        $contact->save();
+        return redirect()
+            ->route('phods.index')
+            ->with('notice', 'お問い合わせが完了しました。');
     }
 
     /**

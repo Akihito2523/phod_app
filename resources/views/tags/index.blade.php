@@ -22,7 +22,7 @@
         <tbody>
             @foreach ($tags as $tag)
                 <tr>
-                    <td>{{ $tag->tag }}</td>
+                    <td>{{ $tag->type }}</td>
                     {{-- @can('update', $tag) --}}
                         <td><a href="{{ route('tags.edit', $tag) }}" class="btn width">編集</a></td>
                     {{-- @endcan --}}
@@ -49,8 +49,8 @@
         <form action="{{ route('tags.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
-                <label for="tag">タグ</label>
-                <input type="text" id="tag" name="tag" autofocus required value="{{ old('tag') }}">
+                <label for="type">タグ</label>
+                <input type="text" id="type" name="type" autofocus required value="{{ old('type') }}">
             </div>
             <input type="submit" class="submit" value="追加">
         </form>

@@ -22,7 +22,7 @@
         <div class="gallery_list">
             <ul class="list_nav_sidebar">
                 @foreach ($tags as $tag)
-                    <li><a href="">{{ $tag->tag }}</a></li>
+                    <li><a href="">{{ $tag->type }}</a></li>
                 @endforeach
             </ul>
         </div>

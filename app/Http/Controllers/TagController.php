@@ -34,7 +34,8 @@ class TagController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Tag $tag, Phod $phod) {
-        $tag->tag = $request->tag;
+        $tag->type = $request->type;
+        // dd($tag->type );
 
         // if ($request->user()->cannot('update', $tag)) {
         //     return redirect()
@@ -77,7 +78,7 @@ class TagController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Tag $tag) {
-        $tag->tag = $request->tag;
+        $tag->type = $request->type;
 
         $tag->save();
 

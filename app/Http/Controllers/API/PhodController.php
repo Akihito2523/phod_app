@@ -88,7 +88,7 @@ class PhodController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(Phod $phod) {
-        // $phods = Phod::all();
+        $phods = Phod::all();
         // return view('phods.show', compact('phod'));
         return response()->json($phod);
     }
