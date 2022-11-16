@@ -11,7 +11,7 @@ use App\Http\Requests\UpdatePhodRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Contact;
-use App\Models\Tag;;
+use App\Models\Tag;
 
 class PhodController extends Controller {
 
@@ -47,10 +47,11 @@ class PhodController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request, Tag $tag) {
         $phod = new Phod($request->all());
-        $phod->user_id = $request->user()->id;
-        $phod->user_id = $request->tag()->id;
+        // $phod->user_id = $request->tag()->id;
+
+        $phod->user_id = $tag->id;
 
         $file = $request->file('image');
         $phod->image = self::createFilename($file);
@@ -116,7 +117,6 @@ class PhodController extends Controller {
         if ($file) {
             // 更新前の画像ファイルのファイル名を保持
             $delete_file_path = $phod->image_path;
-
         }
         logger($request->file('image'));
         // トランザクション開始

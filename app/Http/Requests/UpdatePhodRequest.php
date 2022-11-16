@@ -22,6 +22,7 @@ class UpdatePhodRequest extends FormRequest {
     public function rules() {
         return [
             'title' => 'required|string|max:50',
+            'place' => 'required|string|max:50',
             'body' => 'required|string|max:2000',
             'image' => 'nullable|file|image|mimes:jpg,png'
         ];

@@ -20,6 +20,7 @@ class Phod extends Model {
         'name',
         'email',
         'message',
+        'tag'
     ];
 
     //appends: アクセサの値を渡す値に含める
@@ -35,7 +36,7 @@ class Phod extends Model {
         'user_id',
         'updated_at',
         'user',
-        'tag'
+
     ];
 
 

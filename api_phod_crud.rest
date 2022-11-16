@@ -24,7 +24,6 @@ Authorization: Bearer {{ token }}
 Content-Type: multipart/form-data; boundary=----storeForm
 # boundary=----storeFormは送信するデータの目印
 
-
 ------storeForm
 Content-Disposition: form-data; name="title"
 
@@ -48,7 +47,7 @@ Content-Disposition: form-data; name="image"; filename="file.jpg"
 
 ### update
 # @prompt file
-POST /api/phods/15 HTTP/1.1
+POST /api/phods/2 HTTP/1.1
 Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}
@@ -62,11 +61,15 @@ PATCH
 ------updateForm
 Content-Disposition: form-data; name="title"
 
-アップ
+アップデートタイトル
+------updateForm
+Content-Disposition: form-data; name="place"
+
+アップデート場所
 ------updateForm
 Content-Disposition: form-data; name="body"
 
-Test アップデート本文
+アップデート本文
 ------updateForm
 Content-Disposition: form-data; name="image"; filename="file.jpg"
 
