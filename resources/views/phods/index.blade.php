@@ -9,7 +9,7 @@
         {{-- 検索 --}}
         <form action="{{ route('phods.index') }}" method="GET" class="form_position">
             @csrf
-            <input type="search" name="title" placeholder="日付け" value="{{ old('title') }}">
+            <input type="search" name="title" placeholder="日付" value="{{ old('title') }}">
             {{-- <input type="search" name="title" placeholder="タイトル" value="{{ old('title', $phods['title']) }}"> --}}
             {{-- <input type="search" name="" placeholder="タグ"> --}}
             <input type="submit" value="検索" class="search">
