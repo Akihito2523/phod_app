@@ -25,7 +25,20 @@ class PhodController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request, Tag $tag) {
-    
+        $phods = Phod::all();
+        $tags = Tag::all();
+        // 検索機能
+
+        $title = $request->title;
+
+        // query()はURLの？以降のパラメータ
+        $params = $request->query();
+        $phods = Phod::search($params)->latest()->paginate(12);
+
+        // appends配列を追加し、ページネーションでも検索可能
+        $phods->appends(compact('title'));
+        // return view('phods.index', compact('phods', 'tags'));
+        return response()->json($phods);
     }
 
     /**
