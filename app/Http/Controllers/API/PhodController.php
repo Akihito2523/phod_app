@@ -53,7 +53,7 @@ class PhodController extends Controller {
 
         // $phod->tag_id = $tag->id;
 
-        $phod->user_id = $request->user()->id;
+        $phod->user_id = 1;
         $phod->tag_id = $request->tag_id;
 
         $file = $request->file('image');

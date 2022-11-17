@@ -16,11 +16,10 @@ class Phod extends Model {
         'place',
         'body',
         'created_at',
-
         'name',
         'email',
         'message',
-        'tag_id'
+        // 'tag_id'
     ];
 
     //appends: アクセサの値を渡す値に含める
