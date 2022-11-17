@@ -26,7 +26,7 @@ class Phod extends Model {
     protected $appends = [
         'user_name',
         'image_url',
-        // 'tag_type',
+        'tag_type',
     ];
 
     //hidden: 渡す値に含めない
