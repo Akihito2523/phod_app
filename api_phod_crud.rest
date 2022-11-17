@@ -37,6 +37,10 @@ Content-Disposition: form-data; name="body"
 
 store 本文
 ------storeForm
+Content-Disposition: form-data; name="tag_id"
+
+2
+------storeForm
 Content-Disposition: form-data; name="image"; filename="file.jpg"
 
 < {{ file }}

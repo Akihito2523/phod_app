@@ -20,14 +20,14 @@ class Phod extends Model {
         'name',
         'email',
         'message',
-        'tag'
+        'tag_id'
     ];
 
     //appends: アクセサの値を渡す値に含める
     protected $appends = [
         'user_name',
         'image_url',
-        'tag_type',
+        // 'tag_type',
     ];
 
     //hidden: 渡す値に含めない

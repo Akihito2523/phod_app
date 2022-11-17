@@ -133,7 +133,7 @@ class PhodController extends Controller {
 
         return redirect()
             ->route('phods.show', $phod)
-            ->with('notice', '写真を更新しました');
+            ->with('notice', '写真を更新しました!');
     }
 
     /**

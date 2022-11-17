@@ -47,11 +47,14 @@ class PhodController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Tag $tag) {
+    public function store(Request $request) {
         $phod = new Phod($request->all());
         // $phod->user_id = $request->tag()->id;
 
-        $phod->user_id = $tag->id;
+        // $phod->tag_id = $tag->id;
+
+        $phod->user_id = $request->user()->id;
+        $phod->tag_id = $request->tag_id;
 
         $file = $request->file('image');
         $phod->image = self::createFilename($file);
