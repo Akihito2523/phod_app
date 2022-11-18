@@ -28,6 +28,10 @@ class PhodController extends Controller {
         $params = $request->query();
         $phods = Phod::search($params)->latest()->paginate(15);
 
+        // $phods = Phod::search($params)->with('tag')->latest()->paginate(15);
+
+        // $phods = Phod::search($params)->published()->with('tag_id')->latest()->paginate(15);
+
         // appends配列を追加し、ページネーションでも検索可能
         $phods->appends(compact('title', 'tag_id'));
 
