@@ -9,9 +9,8 @@
         {{-- 検索 --}}
         <form action="{{ route('phods.index') }}" method="GET" class="form_position">
             @csrf
-            <input type="search" name="title" placeholder="日付" value="{{ old('title') }}">
-            {{-- <input type="search" name="title" placeholder="タイトル" value="{{ old('title', $phods['title']) }}"> --}}
-            {{-- <input type="search" name="" placeholder="タグ"> --}}
+            <input type="search" name="title" placeholder="タイトル" value="{{ old('title') }}">
+            <input type="search" name="tag_id" placeholder="タグ番号">
             <input type="submit" value="検索" class="search">
         </form>
     </div>
@@ -53,7 +52,7 @@
         </div>
 
     </section>
-
+    <a href="{{ route('phods.index') }}" class="btn btn_blue">一覧</a>
     <script src="{{ asset('/js/index.js') }}"></script>
 
 </x-app-layout>

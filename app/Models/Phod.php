@@ -19,7 +19,7 @@ class Phod extends Model {
         'name',
         'email',
         'message',
-        // 'tag_id'
+        'tag_id'
     ];
 
     //appends: アクセサの値を渡す値に含める
@@ -46,9 +46,9 @@ class Phod extends Model {
             // where(検索したいカラム名,検索の条件,条件を追加)
             $query->where('title', 'like', '%' . $params['title'] . '%');
         }
-        // if (!empty($params['score_id'])) {
-        //     $query->where('score_id', 'like', '%' . $params['score_id'] . '%');
-        // }
+        if (!empty($params['tag_id'])) {
+            $query->where('tag_id', 'like', '%' . $params['tag_id'] . '%');
+        }
 
         return $query;
     }

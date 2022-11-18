@@ -5,7 +5,8 @@
         {{-- 検索 --}}
         <form action="{{ route('table') }}" method="GET" class="form_position">
             @csrf
-            <input type="search" name="title" placeholder="日付け" value="{{ old('title') }}">
+            <input type="search" name="title" placeholder="タイトル" value="{{ old('title') }}">
+            <input type="search" name="tag_id" placeholder="タグ番号">
             <input type="submit" value="検索" class="search">
         </form>
     </div>

@@ -22,13 +22,15 @@ class PhodController extends Controller {
         // dd($phods);
         // 検索機能
         $title = $request->title;
+        $tag_id = $request->tag_id;
 
         // query()はURLの？以降のパラメータ
         $params = $request->query();
         $phods = Phod::search($params)->latest()->paginate(15);
 
         // appends配列を追加し、ページネーションでも検索可能
-        $phods->appends(compact('title'));
+        $phods->appends(compact('title', 'tag_id'));
+
         return view('phods.index', compact('phods', 'tags'));
         return response()->json($phods);
     }
