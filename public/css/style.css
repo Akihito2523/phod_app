@@ -33,16 +33,17 @@ html::-webkit-scrollbar-thumb {
     border-radius: 5rem;
 }
 
-/* ヘッダー */
-.page-header {
+
+.header_nav {
     display: flex;
-    justify-content: space-between;
     height: 80px;
+    margin: 10px 40px;
+    align-items: center;
 }
 
 .logo {
-    width: 70px;
-    margin-top: -12px;
+    width: 90px;
+    /* margin-top: -12px; */
 }
 
 .main-nav {
@@ -660,8 +661,24 @@ textarea:focus {
         font-size: 18px;
     }
 
+    .logo {
+        margin-top: 300px;
+        margin: 0 auto;
+        /* margin-bottom: 130px; */
+    }
+
+    .tag_color {
+        font-size: 10px;
+    }
+
+    /*
     .page-header {
         display: block;
+        height: 220px;
+    } */
+
+    .list_nav_sidebar a {
+        font-size: 1px;
     }
 
     .main-nav {

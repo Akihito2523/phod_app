@@ -4,6 +4,18 @@
     {{-- フラッシュメッセージ --}}
     <x-flash-message :message="session('notice')" />
 
+    <div class="header_nav">
+        <h1><a href="{{ route('root') }}"><img src="{{ asset('images/logo.png') }}" alt="写真" class="logo"></a></h1>
+        <nav>
+            <ul class="main-nav">
+                <li> <a href="{{ route('root') }}">HOME</li>
+                <li><a href="{{ route('list') }}">List</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
+                <li><a href="{{ route('tags.index') }}">Tag</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="form_header">
         <h2 class="headline">写真一覧</h2>
         {{-- 検索 --}}
