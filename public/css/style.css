@@ -659,6 +659,7 @@ textarea:focus {
 
     .headline {
         font-size: 18px;
+        text-align: center;
     }
 
     .logo {
@@ -671,18 +672,31 @@ textarea:focus {
         font-size: 10px;
     }
 
-    /*
-    .page-header {
+
+    .header_nav {
         display: block;
-        height: 220px;
-    } */
+    }
 
     .list_nav_sidebar a {
         font-size: 1px;
+        margin-bottom: 40px;
+    }
+
+    .form_header {
+    display: block;
+    }
+
+    .table {
+        width: 7px
+    }
+
+    .tags_table {
+        width: 90%;
     }
 
     .main-nav {
         font-size: 14px;
+        /* padding-bottom: 40px; */
     }
 
     .gallery {
@@ -690,7 +704,7 @@ textarea:focus {
     }
 
     input[type="search"] {
-        width: 20%;
+        width: 16%;
         border: 1px solid rgb(148, 164, 129);
         font-size: 13px;
     }
