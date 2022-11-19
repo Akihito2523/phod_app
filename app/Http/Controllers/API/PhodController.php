@@ -39,8 +39,6 @@ class PhodController extends Controller {
         // appends配列を追加し、ページネーションでも検索可能
         $phods->appends(compact('title', 'tag_id'));
         // return view('phods.index', compact('phods', 'tags'));
-
-        // return view('phods.index', compact('phods', 'tags'));
         return response()->json($phods);
     }
 

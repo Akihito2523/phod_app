@@ -26,7 +26,7 @@ class PhodController extends Controller {
 
         // query()はURLの？以降のパラメータ
         $params = $request->query();
-        $phods = Phod::search($params)->latest()->paginate(15);
+        $phods = Phod::search($params)->latest()->paginate(21);
 
         // $phods = Phod::search($params)->with('tag')->latest()->paginate(15);
 
