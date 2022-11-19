@@ -43,7 +43,7 @@
 
         <div class="gallery-container">
             @foreach ($phods as $phod)
-                <div class="box">
+                <div class="box animationTarget">
                     <a href="{{ route('phods.show', $phod) }}">
                         <img src="{{ $phod->image_url }}" alt="">
                     </a>

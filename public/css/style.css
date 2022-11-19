@@ -663,6 +663,8 @@ textarea:focus {
 
     .form_header {
         display: block;
+        text-align: right;
+        margin-right: 10px;
         /* margin-left: 260px; */
     }
 
@@ -690,16 +692,16 @@ textarea:focus {
     }
 
     .table_img {
-        width: 100px;
-        height: 50px;
+        width: 80px;
+        height: 40px;
     }
 
     .table thead th {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .table tbody td {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .tags_table {
@@ -727,7 +729,7 @@ textarea:focus {
     input[type="search"] {
         width: 14%;
         border: 1px solid rgb(148, 164, 129);
-        font-size: 13px;
+        font-size: 10px;
     }
 
     .gallery .gallery-container {
@@ -789,7 +791,8 @@ textarea:focus {
         /* clip-path: polygon(0 0, 100% 0%, 100% 70%, 45% 100%, 0 70%); */
     }
 
-    .input[type="search"]::placeholder {
-        font-size: 2px;
+    .contact_container {
+        padding: 10px 2px;
     }
+
 }
