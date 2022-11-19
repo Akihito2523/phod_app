@@ -4,7 +4,7 @@
     <nav>
         <ul class="main-nav">
             <li> <a href="{{ route('root') }}">HOME</li>
-            <li><a href="{{ route('table') }}">List</a></li>
+            <li><a href="{{ route('list') }}">List</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
             <li><a href="{{ route('tags.index') }}">Tag</a></li>
 </a></li>

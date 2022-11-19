@@ -24,9 +24,9 @@ Route::apiResource('phods', PhodController::class)
     ->middleware('auth:api')
     ->names('api.phods');
 
-Route::apiResource('phods.table', PhodController::class)
+Route::apiResource('phods.list', PhodController::class)
     ->middleware('auth:api')
-    ->names('api.phods.table');
+    ->names('api.phods.list');
 
 
 

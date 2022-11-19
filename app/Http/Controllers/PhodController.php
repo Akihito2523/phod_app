@@ -171,14 +171,14 @@ class PhodController extends Controller {
     }
 
     // テーブルメソッド
-    public function table(Request $request) {
+    public function list(Request $request) {
         $title = $request->title;
         // $score_id = $request->score_id;
 
         $params = $request->query();
         $phods = Phod::search($params)->latest()->paginate(12);
         // $photos->appends(compact('title', 'score_id'));
-        return view('phods.table', compact('phods'));
+        return view('phods.list', compact('phods'));
 
         // Photoモデル全件検索する箱
         // $query = Photo::query();

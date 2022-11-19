@@ -3,7 +3,7 @@
     <div class="form_header">
         <h2 class="headline">リスト一覧</h2>
         {{-- 検索 --}}
-        <form action="{{ route('table') }}" method="GET" class="form_position">
+        <form action="{{ route('list') }}" method="GET" class="form_position">
             @csrf
             <input type="search" name="title" placeholder="タイトル" value="{{ old('title') }}">
             <input type="search" name="tag_id" placeholder="タグ番号">
@@ -15,7 +15,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ID番号</th>
+                <th>タグ情報</th>
                 <th>登録者</th>
                 <th>タイトル</th>
                 <th>写真</th>
@@ -29,6 +30,7 @@
             @foreach ($phods as $phod)
                 <tr>
                     <td><a href="{{ route('phods.show', $phod) }}" class="hover-link">{{ $phod->id }}</a></td>
+                    <td>{{ $phod->tag->type }}</td>
                     <td>{{ $phod->user->name }}</td>
                     <td>{{ $phod->title }}</td>
                     <td><img src="{{ $phod->image_url }}" class="table_img">{{ $phod->image }}</td>

@@ -4,6 +4,7 @@
 
     {{-- validation-errors.blade.php読み込み --}}
     <x-validation-errors :errors="$errors" />
+    
 
     <form action="{{ route('phods.store') }}" method="POST">
         @csrf

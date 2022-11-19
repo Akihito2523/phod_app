@@ -21,9 +21,9 @@
         <div class="gallery_list">
             <ul class="list_nav_sidebar">
                 @foreach ($tags as $tag)
-                    {{-- <li>{{ $tag->id }}</li> --}}
+                    {{-- <li class="tag_id">{{ $tag->id }}</li> --}}
                     <li><a href="/?tag_id={{ $tag->id }}" +
-                            class=" {{ Request::get('tag_id') == $tag->id ? 'tag_color tag_font' : '' }}">{{ $tag->type }}</a>
+                            class="tag_hover {{ Request::get('tag_id') == $tag->id ? 'tag_color tag_font' : '' }}">{{ $tag->id }}　{{ $tag->type }}</a>
                     </li>
                 @endforeach
             </ul>

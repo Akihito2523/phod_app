@@ -26,8 +26,8 @@ Route::get('/', [PhodController::class, 'index'])
 // ->middleware('auth');
 
 //table.blade.php
-Route::get('phods/table/', [PhodController::class, 'table'])
-    ->name('table');
+Route::get('phods/list/', [PhodController::class, 'list'])
+    ->name('list');
 
 //contact.blade.php
 Route::get('phods/contact/', [PhodController::class, 'contact'])

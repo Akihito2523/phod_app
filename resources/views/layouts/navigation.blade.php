@@ -41,9 +41,9 @@
 
                         <!-- Authentication -->
                         @auth
-                            <x-dropdown-link :href="route('phods.create')">
+                            {{-- <x-dropdown-link :href="route('register')">
                                 {{ __('作成') }}
-                            </x-dropdown-link>
+                            </x-dropdown-link> --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <x-dropdown-link :href="route('logout')"

@@ -34,7 +34,7 @@ class PhodController extends Controller {
 
         // query()はURLの？以降のパラメータ
         $params = $request->query();
-        $phods = Phod::search($params)->latest()->paginate(15);
+        $phods = Phod::search($params)->latest()->paginate(21);
 
         // appends配列を追加し、ページネーションでも検索可能
         $phods->appends(compact('title', 'tag_id'));
@@ -191,14 +191,14 @@ class PhodController extends Controller {
     }
 
     // テーブルメソッド
-    public function table(Request $request) {
+    public function list(Request $request) {
         $title = $request->title;
         // $score_id = $request->score_id;
 
         $params = $request->query();
         $phods = Phod::search($params)->latest()->paginate(12);
         // $photos->appends(compact('title', 'score_id'));
-        return view('phods.table', compact('phods'));
+        return view('phods.list', compact('phods'));
     }
 
     // (getClientOriginalName)画像ファイル名を取得
