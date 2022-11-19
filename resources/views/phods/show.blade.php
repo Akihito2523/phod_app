@@ -36,9 +36,9 @@
                 </p>
                 <p>{{ $phod->tag->type }}</p>
                 <div class="icons">
-                    <a href="#" class="fab fa-facebook"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://ja-jp.facebook.com/" class="fab fa-facebook"></a>
+                    <a href="https://twitter.com/" class="fab fa-twitter"></a>
+                    <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
                 </div>
             </div>
 

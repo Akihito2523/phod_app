@@ -672,7 +672,7 @@ textarea:focus {
     }
 
     .tag_color {
-        font-size: 10px;
+        font-size: 4px;
     }
 
 
@@ -684,7 +684,7 @@ textarea:focus {
 
     .table {
         width: 7px;
-        font-size: 10px;
+        font-size: 8px;
         margin: 0 auto;
 
     }
@@ -739,12 +739,20 @@ textarea:focus {
         display: inline;
     }
 
+    .edit_image {
+        width: 98%;
+    }
+
     section::before {
         transform: translate(-200px, -180px);
     }
 
     section::after {
         transform: translate(220px, 180px);
+    }
+
+    .btn.btn_blue {
+        width: 100px;
     }
 
     .container {
@@ -757,5 +765,31 @@ textarea:focus {
 
     .tag_hover:hover {
         box-shadow: 0 0 5px
+    }
+
+    .info {
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        height: 100%;
+        width: 99%;
+        margin: 0px;
+        padding: 6px;
+    }
+
+    .card .bg-image img {
+        width: 100%;
+        height: 60%;
+        border-radius: 10px;
+        /* height: 100%; */
+        object-fit: cover;
+        /* clip-path: polygon(0 0, 100% 0%, 100% 70%, 45% 100%, 0 70%); */
+    }
+
+    .input[type="search"]::placeholder {
+        font-size: 2px;
     }
 }
