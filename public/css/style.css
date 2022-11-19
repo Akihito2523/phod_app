@@ -418,7 +418,6 @@ input[type="search"] {
     width: 60%;
     border: 1px solid rgb(148, 164, 129);
     font-size: 13px;
-
 }
 
 input[type="search"]::placeholder {
@@ -520,7 +519,7 @@ textarea:focus {
 
 .contact_container {
 
-    background:#222;
+    background: #222;
     margin: 0 auto;
     padding: 20px;
 }
@@ -656,6 +655,38 @@ textarea:focus {
 /*--------------- レスポンシブデザイン ---------------*/
 
 @media screen and (max-width: 768px) {
+
+    .headline {
+        font-size: 18px;
+    }
+
+    .page-header {
+        display: block;
+    }
+
+    .main-nav {
+        font-size: 14px;
+    }
+
+    .gallery {
+        display: block;
+    }
+
+    input[type="search"] {
+        width: 20%;
+        border: 1px solid rgb(148, 164, 129);
+        font-size: 13px;
+    }
+
+    .gallery .gallery-container {
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .gallery_list {
+        display: inline;
+    }
+
     section::before {
         transform: translate(-200px, -180px);
     }
