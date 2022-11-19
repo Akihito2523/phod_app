@@ -161,7 +161,7 @@ html::-webkit-scrollbar-thumb {
 
 .gallery_list {
     padding: 10px 0;
-    width: 8%;
+    width: 10%;
 }
 
 .gallery_list+.gallery_list {

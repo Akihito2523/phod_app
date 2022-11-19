@@ -176,8 +176,7 @@ class PhodController extends Controller {
         // $score_id = $request->score_id;
 
         $params = $request->query();
-        // $phods = Phod::search($params)->latest()->paginate(12);
-        $phods = Phod::search($params);
+        $phods = Phod::search($params)->latest()->paginate(20);
         // $photos->appends(compact('title', 'score_id'));
         return view('phods.list', compact('phods'));
 
