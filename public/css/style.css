@@ -151,7 +151,6 @@ html::-webkit-scrollbar-thumb {
 
 .tag_hover:hover {
     box-shadow: 0 0 5px #50A7FF, 0 0 25px #50A7FF, 0 0 50px #50A7FF, 0 0 100px #50A7FF;
-
 }
 
 .gallery {
@@ -662,10 +661,14 @@ textarea:focus {
         text-align: center;
     }
 
+    .form_header {
+        display: block;
+        /* margin-left: 260px; */
+    }
+
     .logo {
-        margin-top: 300px;
+        margin-top: 200px;
         margin: 0 auto;
-        /* margin-bottom: 130px; */
     }
 
     .tag_color {
@@ -675,19 +678,28 @@ textarea:focus {
 
     .header_nav {
         display: block;
+        margin-bottom: 100px;
     }
 
-    .list_nav_sidebar a {
-        font-size: 1px;
-        margin-bottom: 40px;
-    }
-
-    .form_header {
-    display: block;
-    }
 
     .table {
-        width: 7px
+        width: 7px;
+        font-size: 10px;
+        margin: 0 auto;
+
+    }
+
+    .table_img {
+        width: 100px;
+        height: 50px;
+    }
+
+    .table thead th {
+        font-size: 10px;
+    }
+
+    .table tbody td {
+        font-size: 10px;
     }
 
     .tags_table {
@@ -696,15 +708,24 @@ textarea:focus {
 
     .main-nav {
         font-size: 14px;
-        /* padding-bottom: 40px; */
+        margin-bottom: 20px;
+    }
+
+    .main-nav a {
+        /* margin-bottom: 40px; */
     }
 
     .gallery {
         display: block;
     }
 
+    .width {
+        width: 60%;
+        font-size: 10px;
+    }
+
     input[type="search"] {
-        width: 16%;
+        width: 14%;
         border: 1px solid rgb(148, 164, 129);
         font-size: 13px;
     }
@@ -732,5 +753,9 @@ textarea:focus {
 
     .container h2 {
         font-size: 28px;
+    }
+
+    .tag_hover:hover {
+        box-shadow: 0 0 5px
     }
 }
