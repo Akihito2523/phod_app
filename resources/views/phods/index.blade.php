@@ -17,7 +17,7 @@
     </div>
 
     <div class="form_header">
-        <h2 class="headline reveal">写真一覧</h2>
+        <h2 class="headline">写真一覧</h2>
         {{-- 検索 --}}
         <form action="{{ route('phods.index') }}" method="GET" class="form_position">
             @csrf
