@@ -45,7 +45,7 @@
                     <td>{{ $phod->tag->type }}</td>
                     <td>{{ $phod->user->name }}</td>
                     <td>{{ $phod->title }}</td>
-                    <td><img src="{{ $phod->image_url }}" class="table_img">{{ $phod->image }}</td>
+                    <td class="img_font"><img src="{{ $phod->image_url }}" class="table_img">{{ $phod->image }}</td>
                     <td>{{ \Carbon\Carbon::parse($phod->created_at)->format('Y:m:d') }}</td>
 
                     {{-- @can('update', $photo) --}}

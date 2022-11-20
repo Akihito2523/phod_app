@@ -17,7 +17,7 @@
     </div>
 
     <div class="form_header">
-        <h2 class="headline">写真一覧</h2>
+        <h2 class="headline reveal">写真一覧</h2>
         {{-- 検索 --}}
         <form action="{{ route('phods.index') }}" method="GET" class="form_position">
             @csrf
@@ -41,9 +41,9 @@
             </ul>
         </div>
 
-        <div class="gallery-container">
+        <div class="gallery-container reveal">
             @foreach ($phods as $phod)
-                <div class="box animationTarget">
+                <div class="box">
                     <a href="{{ route('phods.show', $phod) }}">
                         <img src="{{ $phod->image_url }}" alt="">
                     </a>

@@ -68,10 +68,11 @@ html::-webkit-scrollbar-thumb {
 }
 
 .main-nav a:hover {
-    color: rgb(12, 12, 209);
+    /* color: rgb(12, 12, 209);
     text-decoration: underline;
     background-color: #4390bd;
-    color: #fff;
+    color: #fff; */
+    box-shadow: 0 0 5px #3e62be, 0 0 25px #3838b7, 0 0 50px #7229a0, 0 0 100px #3d4d94;
 }
 
 
@@ -142,7 +143,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .tag_font {
-    font-size: bold;
+    font-weight: bold;
 }
 
 .text-blue-500 {
@@ -264,6 +265,18 @@ html::-webkit-scrollbar-thumb {
 
 .gallery .gallery-container .box .icons a:hover {
     color: var(--main-color);
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 
@@ -674,7 +687,7 @@ textarea:focus {
     }
 
     .tag_color {
-        font-size: 4px;
+        /* font-size: 4px; */
     }
 
 
@@ -685,8 +698,8 @@ textarea:focus {
 
 
     .table {
-        width: 7px;
-        font-size: 8px;
+        width: 6px;
+        font-size: 6px;
         margin: 0 auto;
 
     }
@@ -697,11 +710,11 @@ textarea:focus {
     }
 
     .table thead th {
-        font-size: 8px;
+        font-size: 6px;
     }
 
     .table tbody td {
-        font-size: 8px;
+        font-size: 6px;
     }
 
     .tags_table {
@@ -794,5 +807,11 @@ textarea:focus {
     .contact_container {
         padding: 10px 2px;
     }
+
+    .form_position {
+        margin-bottom: 10px;
+    }
+
+
 
 }

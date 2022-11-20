@@ -33,7 +33,7 @@
 
         <tbody>
             @foreach ($tags as $tag)
-                <tr>
+                <tr class="tag_tag">
                     <td>{{ $tag->type }}</td>
                     {{-- @can('update', $tag) --}}
                     <td><a href="{{ route('tags.edit', $tag) }}" class="btn width">編集</a></td>

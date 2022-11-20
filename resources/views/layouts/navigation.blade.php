@@ -101,9 +101,9 @@
 
                 <div class="mt-3 space-y-1">
                     <!-- Authentication -->
-                    <x-responsive-nav-link :href="route('phods.create')">
-                        {{ __('Create Post') }}
-                    </x-responsive-nav-link>
+                    {{-- <x-responsive-nav-link :href="route('phods.create')">
+                        {{ __('Create Post') }} --}}
+                    {{-- </x-responsive-nav-link> --}}
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-responsive-nav-link :href="route('logout')"
@@ -114,13 +114,13 @@
                     </form>
                 </div>
             @else
-                <div class="px-4">
+                {{-- <div class="px-4">
                     <div class="font-medium text-base text-gray-800">guest</div>
-                </div>
+                </div> --}}
 
                 <div class="mt-3 space-y-1">
                     <x-responsive-nav-link :href="route('register')">
-                        {{ __('Sign Up') }}
+                        {{ __('ユーザー登録') }}
                     </x-responsive-nav-link>
                     <x-responsive-nav-link :href="route('login')">
                         {{ __('ログイン') }}

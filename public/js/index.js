@@ -15,18 +15,26 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 
-const tagetElement = document.querySelectorAll(".animationTarget");
-console.log("画面の高さ", window.innerHeight)
-document.addEventListener("scroll", function(){
-    for(let i = 0; i < tagetElement.length; i++){
-    //getBoundingClientRectはブラウザからliタグまでの距離
-    const getElementDistance = tagetElement[i].getBoundingClientRect().top + tagetElement[i].clientHeight * .6;//6割見えてshowが出てくる
 
-    // li要素が見えたらクラスshowを追加
-    if(window.innerHeight > getElementDistance){
-        tagetElement[i].classList.add("show");
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+let reveals = document.querySelectorAll('.reveal');
+
+for (let i = 0; i < reveals.length; i++) {
+
+    console.log(window.innerHeight);
+    let windowheight = window.innerHeight;
+    let revealtop = reveals[i].getBoundingClientRect().top;
+    let revealpoint = 150;
+
+    if (revealtop < windowheight - revealpoint) {
+    reveals[i].classList.add('active');
+    } else {
+    reveals[i].classList.remove('active');
     }
-    //if(window.innerHeight)
-    }
-});
+}
+}
+
+
 
