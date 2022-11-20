@@ -51,7 +51,7 @@ Content-Disposition: form-data; name="image"; filename="file.jpg"
 
 ### update
 # @prompt file
-POST /api/phods/1 HTTP/1.1
+POST /api/phods/86 HTTP/1.1
 Host: {{ host }}
 Accept: application/json
 Authorization: Bearer {{ token }}

@@ -26,7 +26,7 @@ for (let i = 0; i < reveals.length; i++) {
     console.log(window.innerHeight);
     let windowheight = window.innerHeight;
     let revealtop = reveals[i].getBoundingClientRect().top;
-    let revealpoint = 150;
+    let revealpoint = 20;
 
     if (revealtop < windowheight - revealpoint) {
     reveals[i].classList.add('active');
