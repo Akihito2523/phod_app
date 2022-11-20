@@ -1,0 +1,70 @@
+
+
+### Get Token
+# @prompt code
+POST /oauth/token HTTP/1.1
+Host: {{ host }}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code
+&client_id={{ client_id }}
+&client_secret={{ client_secret }}
+&code={{ code }}
+&redirect_uri=http://localhost
+
+
+#ユーザー情報を取得
+### user
+GET /api/user HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}
+
+
+### index
+GET /api/phods HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}
+
+### show
+# @prompt phod_id
+GET /api/phods/{{ phod_id }}?perPage=20&page=1 HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}
+
+### store
+# @prompt file
+POST /api/phods HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}
+Content-Type: multipart/form-data; boundary=----storeForm
+# boundary=----storeFormは送信するデータの目印
+
+------storeForm
+Content-Disposition: form-data; name="title"
+
+store タイトル
+------storeForm
+Content-Disposition: form-data; name="place"
+
+store 場所
+------storeForm
+Content-Disposition: form-data; name="body"
+
+
+store 本文
+------storeForm
+Content-Disposition: form-data; name="image"; filename="file.jpg"
+
+< {{ file }}
+------storeForm--
+
+### destroy
+# @prompt phod_id
+DELETE /api/phods/{{ phod_id }} HTTP/1.1
+Host: {{ host }}
+Accept: application/json
+Authorization: Bearer {{ token }}
